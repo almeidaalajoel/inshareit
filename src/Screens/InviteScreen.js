@@ -9,7 +9,7 @@ import {
   Keyboard,
 } from 'react-native';
 
-import {DataContext} from '../contexts';
+import {CollectionContext, UserContext} from '../contexts';
 import {sendInvite} from '../firebase';
 
 import Feather from 'react-native-vector-icons/Feather';
@@ -18,7 +18,8 @@ const InviteScreen = () => {
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const {userSnapshot, collectionSnapshot} = useContext(DataContext);
+  const {userSnapshot} = useContext(UserContext);
+  const {collectionSnapshot} = useContext(CollectionContext);
 
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 

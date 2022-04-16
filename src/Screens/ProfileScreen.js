@@ -3,13 +3,14 @@ import React, {useEffect, useContext} from 'react';
 
 import Invite from '../Components/Invite';
 import {signOut} from '../firebase';
-import {DataContext} from '../contexts';
+import {UserContext, InviteContext} from '../contexts';
 
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 
 const ProfileScreen = () => {
-  const {userSnapshot, invites} = useContext(DataContext);
+  const {userSnapshot} = useContext(UserContext);
+  const {invites} = useContext(InviteContext);
   const navigation = useNavigation();
 
   useEffect(() => {

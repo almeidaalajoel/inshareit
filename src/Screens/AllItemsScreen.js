@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 
 import Item from '../Components/Item';
-import {DataContext} from '../contexts';
+import {CollectionContext} from '../contexts';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 const AllItemsScreen = ({navigation, route}) => {
-  const {collectionSnapshot} = useContext(DataContext);
+  const {collectionSnapshot} = useContext(CollectionContext);
   const {height, width} = useWindowDimensions();
   const [text, setText] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);

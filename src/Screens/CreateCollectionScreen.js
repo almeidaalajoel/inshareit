@@ -11,7 +11,7 @@ import {
 import defaultCategories from '../DefaultCategories';
 import NewCategory from '../Components/NewCategory';
 import AddRow from '../Components/AddRow';
-import {DataContext} from '../contexts';
+import {UserContext} from '../contexts';
 import {createCollection} from '../firebase';
 
 import {useNavigation} from '@react-navigation/native';
@@ -22,7 +22,7 @@ const CreateCollectionScreen = () => {
   const [adding, setAdding] = useState(false);
   const [collectionName, setCollectionName] = useState('');
   const [collections, setCollections] = useState([]);
-  const {userSnapshot} = useContext(DataContext);
+  const {userSnapshot} = useContext(UserContext);
   const listRef = useRef(null);
   const navigation = useNavigation();
 

@@ -1,14 +1,14 @@
 import React, {useContext, useEffect} from 'react';
 import {FlatList, SafeAreaView, TouchableOpacity} from 'react-native';
 
-import {DataContext} from '../contexts';
+import {UserContext} from '../contexts';
 
 import {useNavigation} from '@react-navigation/native';
 import CollectionChooser from '../Components/CollectionChooser';
 import Feather from 'react-native-vector-icons/Feather';
 
 const CollectionsScreen = () => {
-  const {userSnapshot} = useContext(DataContext);
+  const {userSnapshot} = useContext(UserContext);
   const navigation = useNavigation();
 
   useEffect(() =>

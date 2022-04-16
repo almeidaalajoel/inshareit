@@ -5,7 +5,6 @@ import {DataContext} from '../contexts';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const TOSScreen = () => {
-  const {setAgreedToTOS} = useContext(DataContext);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>

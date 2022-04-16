@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
 import {View, FlatList, Text} from 'react-native';
 
-import {DataContext} from '../contexts';
+import {CategoryContext} from '../contexts';
 
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CategoryTile from '../Components/CategoryTile';
 
 const CategoriesScreen = () => {
-  const {categoryImages} = useContext(DataContext);
+  const {categoryImages} = useContext(CategoryContext);
 
   const renderItem = ({item, index}) => {
     return <CategoryTile index={index} imageURL={item[1]} category={item[0]} />;

@@ -4,7 +4,12 @@ import React, {useContext, useEffect} from 'react';
 import CategoriesScreen from './CategoriesScreen';
 import AllItemsScreen from './AllItemsScreen';
 import CollectionName from '../Components/CollectionName';
-import {DataContext} from '../contexts';
+import {
+  CategoryContext,
+  CollectionContext,
+  InviteContext,
+  UserContext,
+} from '../contexts';
 import {setUserCollectionImage} from '../firebase';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -16,13 +21,10 @@ import {TouchableOpacity, View} from 'react-native';
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
-  const {
-    setCategoryImages,
-    collectionSnapshot,
-    userSnapshot,
-    setInvites,
-    inviteSnapshot,
-  } = useContext(DataContext);
+  const {setCategoryImages} = useContext(CategoryContext);
+  const {collectionSnapshot} = useContext(CollectionContext);
+  const {userSnapshot} = useContext(UserContext);
+  const {setInvites, inviteSnapshot} = useContext(InviteContext);
   const navigation = useNavigation();
 
   useEffect(() => {

@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 import {addItem, getURL, uploadImage} from '../firebase';
-import {DataContext} from '../contexts';
+import {CollectionContext, UserContext} from '../contexts';
 
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import Feather from 'react-native-vector-icons/Feather';
@@ -26,10 +26,10 @@ const UploadScreen = ({navigation, route}) => {
   const [uploading, setUploading] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const {collectionSnapshot} = useContext(DataContext);
+  const {collectionSnapshot} = useContext(CollectionContext);
   const {width, height} = useWindowDimensions();
   const [finished, setFinished] = useState(false);
-  const {userSnapshot} = useContext(DataContext);
+  const {userSnapshot} = useContext(UserContext);
 
   useEffect(
     () =>

@@ -6,15 +6,15 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
-import {DataContext} from '../contexts';
+import {CategoryContext, CollectionContext} from '../contexts';
 import Item from '../Components/Item';
 
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 
 const CategoryScreen = ({route}) => {
-  const {collectionSnapshot, categoryItems, setCategoryItems} =
-    useContext(DataContext);
+  const {collectionSnapshot} = useContext(CollectionContext);
+  const {categoryItems, setCategoryItems} = useContext(CategoryContext);
   const navigation = useNavigation();
   const {width} = useWindowDimensions();
 

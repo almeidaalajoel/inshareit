@@ -3,7 +3,7 @@ import React, {useState, useEffect, useContext, useRef} from 'react';
 // import {debouncerOutgoing} from '../funcs/Debounce';
 
 import Comment from '../Components/Comment';
-import {DataContext} from '../contexts';
+import {CollectionContext, ItemContext, UserContext} from '../contexts';
 import {postComment, report} from '../firebase';
 
 import FastImage from 'react-native-fast-image';
@@ -28,8 +28,9 @@ const ItemScreen = ({navigation, route}) => {
   const [commentText, setCommentText] = useState('');
   const commentsRef = useRef(null);
   const [shouldScroll, setShouldScroll] = useState(false);
-  const {currentItem, setCurrentItem, collectionSnapshot, userSnapshot} =
-    useContext(DataContext);
+  const {currentItem, setCurrentItem} = useContext(ItemContext);
+  const {collectionSnapshot} = useContext(CollectionContext);
+  const {userSnapshot} = useContext(UserContext);
 
   useEffect(() => {
     if (collectionSnapshot) {

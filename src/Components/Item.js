@@ -3,14 +3,14 @@ import {View, useWindowDimensions, TouchableOpacity} from 'react-native';
 
 import FastImage from 'react-native-fast-image';
 import {useNavigation} from '@react-navigation/native';
-import {DataContext} from '../contexts';
+import {ItemContext} from '../contexts';
 
 export default function Item(props) {
   const [paddingRight, setPaddingRight] = useState(0);
   const [paddingLeft, setPaddingLeft] = useState(0);
   const {height, width} = useWindowDimensions();
   const navigation = useNavigation();
-  const {setCurrentItem} = useContext(DataContext);
+  const {setCurrentItem} = useContext(ItemContext);
 
   const {item} = props;
 
